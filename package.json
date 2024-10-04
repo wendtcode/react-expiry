@@ -1,0 +1,56 @@
+{
+  "name": "react-expiry",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "description": "Hide React components based on expiry date/time",
+  "keywords": [
+    "react",
+    "expire",
+    "expiry",
+    "expiration",
+    "hide",
+    "component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wendtcode/react-expiry"
+  },
+  "homepage": "https://github.com/wendtcode/react-expiry#readme",
+  "bugs": {
+    "url": "https://github.com/wendtcode/react-expiry/issues"
+  },
+  "scripts": {
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "test": "vitest",
+    "prepare": "vitest run && tsc && vite build"
+  },
+  "peerDependencies": {
+    "react": "^16.x || ^18.x || ^19.x",
+    "react-dom": "^16.x || ^18.x || ^19.x"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^22.7.4",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "glob": "^11.0.0",
+    "globals": "^15.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1",
+    "vite-plugin-dts": "^4.2.3",
+    "vitest": "^2.1.2"
+  }
+}

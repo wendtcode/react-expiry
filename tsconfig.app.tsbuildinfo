@@ -1,0 +1,1 @@
+{"root":["./lib/main.test.ts","./lib/main.ts","./lib/expirycontext/expirycontext.tsx","./lib/expirycontext/expiryprovider.tsx","./lib/expirycontext/types.ts","./lib/expirycontext/useexpiry.ts","./lib/expirycontext/utils.ts"],"version":"5.6.2"}
