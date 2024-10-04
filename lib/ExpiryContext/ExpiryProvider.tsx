@@ -1,17 +1,34 @@
 import React from "react";
 import { ExpiryContext } from "./ExpiryContext";
-import { createSafeStorage, addSecondsToDate, getDays } from "./utils";
-import type { Options, Props } from "./types";
+import { createSafeStorage, addSecondsToDate } from "./utils";
 
-export function ExpiryProvider({
+interface Props<TStorage extends Parameters<typeof createSafeStorage>[0]> {
+  children: React.ReactNode;
+  browserOnly?: boolean;
+  defaultTTL?: number;
+  keyPrefix?: string | ((id: string) => string);
+  storage?: TStorage;
+}
+
+export function ExpiryProvider<
+  TStorage extends Parameters<typeof createSafeStorage>[0]
+>({
   children,
   defaultTTL = 0,
   keyPrefix = "expiry:",
   browserOnly = true,
   storage,
-}: Props) {
+}: Props<TStorage>) {
   const shouldRender = React.useCallback(
-    function checkExpiry({ id, ttl = defaultTTL, expires }: Options) {
+    function checkExpiry({
+      id,
+      ttl = defaultTTL,
+      expires,
+    }: {
+      id: string;
+      ttl?: number;
+      expires?: Date;
+    }) {
       // Return true by default on the server, as localStorage does not exist
       if (typeof window === "undefined") {
         return !browserOnly;
@@ -56,5 +73,3 @@ export function ExpiryProvider({
     </ExpiryContext.Provider>
   );
 }
-
-ExpiryProvider.days = getDays;

@@ -1,9 +1,11 @@
 import React from "react";
 import { ExpiryContext } from "./ExpiryContext";
-import { getDays } from "./utils";
-import type { Options } from "./types";
 
-export function useExpiry(options: Options) {
+export function useExpiry(options: {
+  id: string;
+  ttl?: number;
+  expires?: Date;
+}) {
   const shouldRender = React.useContext(ExpiryContext);
 
   if (!shouldRender) {
@@ -13,6 +15,3 @@ export function useExpiry(options: Options) {
   // Memoize the check result to avoid unnecessary re-computations
   return React.useMemo(() => shouldRender(options), [options, shouldRender]);
 }
-
-// Adding `ttl` convenience helper to useExpiry function
-useExpiry.days = getDays;

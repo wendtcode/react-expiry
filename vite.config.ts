@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
@@ -37,5 +36,4 @@ export default defineConfig({
       },
     },
   },
-  test: {},
 });
