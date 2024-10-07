@@ -97,9 +97,13 @@ This is the identifier for the expiry and is used in the persistence key. It sho
 
 This is the time-to-live (in seconds) for the expiry. When the `ttl` is reached, the expiry will return `false` and the component will be hidden.
 
+> NOTE: The use of `ttl` is per user session. If the user clears their storage, the expiry will be reset and the `ttl` will start again.
+
 #### `expires` (optional)
 
 This is the expiration date for the expiry. When the `expires` date is reached, the expiry will return `false` and the component will be hidden.
+
+> NOTE: The use of `expires` is global. It will hide the component for all users.
 
 ## License
 
