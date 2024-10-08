@@ -108,3 +108,23 @@ This is the expiration date for the expiry. When the `expires` date is reached, 
 ## License
 
 MIT
+
+## ESLint
+
+You can install the companion ESLint plugin to add `react-expiry` rules to your linting.
+
+```bash
+pnpm add eslint-plugin-react-expiry
+```
+
+Then add these rules to your ESLint config.
+
+```json
+{
+  "plugins": ["react-expiry"],
+  "rules": {
+    "react-expiry/expires-in-past": "warn",
+    "react-expiry/duplicate-id": "warn"
+  }
+}
+```
